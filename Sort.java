@@ -3,28 +3,36 @@ package sort;
 public class Sort {
 
     public static void main(String[] args) {
-     int arr[] ={2,5,8,10,15,20};
-     int rev = arr.length;
-     //int math = Math.floorDiv(rev, 2);
-     
-     //For array swapping
+     int []arr ={22,44,12,6,10,50,46};
      int temp = 0;
-     for(int i=0; i<3 ; i++){
-         temp = arr[i];
-         arr[i] = arr[rev-i-1];
-         arr[rev-i-1]= temp ;
-     }
-     for(int element:arr){
-         System.out.println(element);
-     }
-     // For maximum value
-     int max =0;
-     for(int element1:arr){
-         if(element1>max){
-             max= element1;
+     
+     //Descending Order:
+     for(int i=0; i<arr.length; i++){
+         for(int j=i+1; j<arr.length; j++){
+            if(arr[i]<arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }           
          }
      }
-        System.out.println("The maximum value of array is : "+max);
+
+    for(int element:arr){
+         System.out.println(element);
     }
-    
+     //For Ascending Order:
+     for(int k=0 ; k<arr.length; k++){
+         for(int l=k+1; l<arr.length; l++){
+             if(arr[k]>arr[l]){
+                 temp =arr[k];
+                 arr[k] = arr[l];
+                 arr[l] = temp;
+             }
+         }
+     }
+         for(int element1: arr){
+             System.out.println(element1);
+         }
+    }
 }
+
